@@ -1,10 +1,19 @@
 import styles from "./App.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   const [value, setValue] = useState(0);
   const onClick = () => setValue((prev) => prev + 1);
-  console.log("call an api");
+
+  console.log("i run all the time");
+
+  const iRunOnlyOnce = () => {
+    console.log("i run only once.");
+  };
+
+  useEffect(() => {
+    console.log("CALL THE API....");
+  }, []);
 
   return (
     <div>
