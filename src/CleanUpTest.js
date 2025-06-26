@@ -1,20 +1,22 @@
 import { useState, useEffect } from "react";
 
 function Hello() {
-  function hiFn() {
+  useEffect(() => {
     console.log("hi :)");
-    return byFn();
-  }
+    return function () {
+      console.log("bye :(");
+    };
+  }, []);
 
-  function byFn() {
-    console.log("bye :(");
-  }
+  useEffect(() => {
+    console.log("hi :)");
+    return () => console.log("bye :(");
+  }, []);
 
-  useEffect(hiFn, []);
   return <h1>Hello!!</h1>;
 }
 
-function App() {
+function CleanUpTest() {
   const [showing, setShowing] = useState(false);
 
   const onClick = () => setShowing((prev) => !prev);
@@ -27,4 +29,4 @@ function App() {
   );
 }
 
-export default App;
+export default CleanUpTest;
