@@ -1,23 +1,33 @@
-import styles from "./App.module.css";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [value, setValue] = useState(0);
+  const [keyword, setKeyword] = useState("");
+
   const onClick = () => setValue((prev) => prev + 1);
-
-  console.log("i run all the time");
-
-  const iRunOnlyOnce = () => {
-    console.log("i run only once.");
-  };
+  const onChange = (event) => setKeyword(event.target.value);
 
   useEffect(() => {
-    console.log("CALL THE API....");
-  }, []);
+    console.log("I run only once.");
+  }, [keyword]);
+
+  useEffect(() => {
+    console.log("I run when 'keyword' changes.");
+  }, [keyword]);
+
+  useEffect(() => {
+    console.log("I run when 'counter' changes.");
+  }, [value]);
 
   return (
     <div>
-      <h1 className={styles.title}>{value}</h1>
+      <input
+        value={keyword}
+        onChange={onChange}
+        type="text"
+        placeholder={"Search here..."}
+      />
+      <h1>{value}</h1>
       <button onClick={onClick}>Click Me</button>
     </div>
   );
