@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
-import CleanUpTest from "./CleanUpTest";
+import ToDo from "./ToDo";
 
 function App() {
-  return <CleanUpTest />;
+  return <ToDo />;
 }
 
 export default App;
