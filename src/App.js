@@ -1,7 +1,8 @@
 import ToDo from "./ToDo";
+import CoinTracker from "./CoinTracker";
 
 function App() {
-  return <ToDo />;
+  return <CoinTracker />;
 }
 
 export default App;
