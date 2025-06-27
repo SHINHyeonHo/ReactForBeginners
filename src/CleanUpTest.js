@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 function Hello() {
-  useEffect(() => {
+  useEffect(function () {
     console.log("hi :)");
     return function () {
       console.log("bye :(");
