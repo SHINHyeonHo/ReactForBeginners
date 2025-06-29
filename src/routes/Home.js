@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import Movie from "./Movie";
 
-function MovieApp() {
+import Movie from "../components/Movie";
+
+function Home() {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
 
@@ -43,4 +44,4 @@ function MovieApp() {
   );
 }
 
-export default MovieApp;
+export default Home;
