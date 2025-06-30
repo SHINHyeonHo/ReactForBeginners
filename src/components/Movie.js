@@ -8,7 +8,7 @@ function Movie({ id, coverImg, title, summary, genres }) {
       <h2>
         <Link to={`/movie/${id}`}>{title}</Link>
       </h2>
-      <p>{summary ?? "No summary available."}</p>
+      <p>{summary !== null ? summary.length > 235 ? `${summary.slice(0, 235)}...` : summary : "No Summary"}</p>
       {genres && Array.isArray(genres) && genres.length > 0 ? (
         <ul>
           {genres.map((g) => (
